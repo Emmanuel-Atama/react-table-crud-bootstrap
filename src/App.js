@@ -123,7 +123,8 @@ const handelEditFormSubmit = (e) => {
   };
 
   return (
-    <div className="conatiner">
+    <div className="conatiner App">
+      <h1 className="text-muted">Mock Data of Company Users</h1>
       <AppContext.Provider value={{handleAddForm, handleAddFormSubmit, handleEditClick, handleDeleteClick }}>
       <form onSubmit={handelEditFormSubmit}>
         <table className="table table-bordered table-striped table-hover">
