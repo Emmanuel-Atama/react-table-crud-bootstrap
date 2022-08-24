@@ -1,6 +1,10 @@
 // import { AppContext } from "../App";
 // import { useContext } from "react";
-export default function ReadOnlyRow({ contact, handleEditClick, handleDeleteClick }) {
+export default function ReadOnlyRow({
+  contact,
+  handleEditClick,
+  handleDeleteClick,
+}) {
   // const { contact, handleEditClick, handleDeleteClick } = useContext(AppContext);
   return (
     <tr>
