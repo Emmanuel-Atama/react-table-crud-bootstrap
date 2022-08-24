@@ -1,6 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-export default function NewContactForm(props) {
-  const {handleAddForm, handleAddFormSubmit} = props
+import { useContext } from "react";
+import { AppContext } from "../App";
+
+
+export default function NewContactForm() {
+const {handleAddForm, handleAddFormSubmit} = useContext(AppContext)
 
 
   return (

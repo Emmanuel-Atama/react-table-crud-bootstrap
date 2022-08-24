@@ -1,6 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+// import { useContext } from "react";
+// import { AppContext } from "../App";
+
 export default function EditableRow({ editForm, handleEditForm, handleCancelClick}) {
-  return (
+  // const { editForm, handleEditForm, handleCancelClick} = useContext(AppContext)
+    return (
    
       <tr>
         <td>

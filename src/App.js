@@ -2,11 +2,13 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TableHead from "./components/TableHead";
 import data from "./data.json";
-import { Fragment, useState } from "react";
+import { createContext, Fragment, useState } from "react";
 import NewContactForm from "./components/NewContactForm";
 import ReadOnlyRow from "./components/ReadOnlyRow";
 import EditableRow from "./components/EditableRow";
 import { nanoid } from "nanoid";
+
+export const AppContext = createContext()
 
 export default function App() {
   const [contacts, setContacts] = useState(data);
@@ -122,6 +124,7 @@ const handelEditFormSubmit = (e) => {
 
   return (
     <div className="conatiner">
+      <AppContext.Provider value={{handleAddForm, handleAddFormSubmit, handleEditClick, handleDeleteClick }}>
       <form onSubmit={handelEditFormSubmit}>
         <table className="table table-bordered table-striped table-hover">
           <TableHead />
@@ -130,9 +133,13 @@ const handelEditFormSubmit = (e) => {
               return (
                 <Fragment>
                   {editContactId === contact.id ? (
-                    <EditableRow editForm={editForm} handleEditForm={handleEditForm} handleCancelClick={handleCancelClick} />
+                    <EditableRow  
+                    editForm={editForm} handleEditForm={handleEditForm} handleCancelClick={handleCancelClick}
+                    />
                   ) : (
-                    <ReadOnlyRow contact={contact} handleEditClick={handleEditClick} handleDeleteClick={handleDeleteClick} />
+                    <ReadOnlyRow 
+                    contact={contact} handleEditClick={handleEditClick} handleDeleteClick={handleDeleteClick}
+                    />
                   )}
                 </Fragment>
               );
@@ -141,10 +148,10 @@ const handelEditFormSubmit = (e) => {
         </table>
         <h2>Add New Contact</h2>
         <NewContactForm
-          handleAddForm={handleAddForm}
-          handleAddFormSubmit={handleAddFormSubmit}
+        handleAddForm={handleAddForm} handleAddFormSubmit={handleAddFormSubmit}
         />
       </form>
+      </AppContext.Provider>
     </div>
   );
 }

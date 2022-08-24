@@ -1,0 +1,3 @@
+value={{setContacts, editForm, setEditForm, setEditContactId, 
+        handleAddForm, handleAddFormSubmit, handleEditForm, handleEditClick, handelEditFormSubmit, handleCancelClick,
+        handleDeleteClick}}
