@@ -119,7 +119,7 @@ function RenderUsersList() {
   };
 
   return (
-    <div className="conatiner App">
+    <div className="conatiner-md App">
       <h1 className="text-muted">Mock Data of Company Users</h1>
       <AppContext.Provider
         value={{
@@ -154,12 +154,13 @@ function RenderUsersList() {
               })}
             </tbody>
           </table>
-          <h2>Add New Contact</h2>
+       
+        </form>
+        <h2>Add New Contact</h2>
           <NewContactForm
             handleAddForm={handleAddForm}
             handleAddFormSubmit={handleAddFormSubmit}
           />
-        </form>
       </AppContext.Provider>
     </div>
   );
