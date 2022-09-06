@@ -25,6 +25,9 @@ function RenderUsersList() {
     phoneNumber: "",
     email: "",
   });
+
+  const [editContactId, setEditContactId] = useState(null);
+
   const handleAddForm = (event) => {
     event.preventDefault();
 
@@ -89,7 +92,7 @@ function RenderUsersList() {
     setEditForm(newFormData);
   };
 
-  const [editContactId, setEditContactId] = useState(null);
+  
 
   const handleEditClick = (e, contact) => {
     e.preventDefault();
